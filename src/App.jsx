@@ -38,7 +38,7 @@ const Navbar = () => {
             {/* Updated Link to the new install page */}
             <Link to="/docs/install" className="text-slate-300 hover:text-cyan-400 transition-colors text-sm font-medium">Docs</Link>
             <Link to="/#contact" className="text-slate-300 hover:text-cyan-400 transition-colors text-sm font-medium">Contact Us</Link>
-            <a href="https://github.com" target="_blank" className="bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 hover:bg-cyan-500/20 px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2">
+            <a href="https://github.com/voidVisual/Kubecent-Kubernetes-cost-optimization" target="_blank" className="bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 hover:bg-cyan-500/20 px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2">
                 <Github size={16} /> GitHub
             </a>
           </div>
@@ -77,7 +77,7 @@ const Footer = () => (
              <Link to="/docs/install" className="bg-white text-slate-950 font-bold py-3 px-8 rounded-lg hover:bg-cyan-50 transition-colors">
                Get Started
              </Link>
-             <a href="https://github.com" className="bg-slate-800 text-white font-medium py-3 px-8 rounded-lg border border-slate-700 hover:bg-slate-700 transition-all">
+             <a href="https://github.com/voidVisual/Kubecent-Kubernetes-cost-optimization" className="bg-slate-800 text-white font-medium py-3 px-8 rounded-lg border border-slate-700 hover:bg-slate-700 transition-all">
                View on GitHub
              </a>
           </div>
@@ -112,7 +112,7 @@ const Footer = () => (
   </footer>
 );
 
-// Layout for Documentation Pages (Sidebar logic)
+// Layout for ocumentation Pages (Sidebar logic)
 const DocsLayout = ({ children }) => {
   const loc = useLocation();
   const menu = [
