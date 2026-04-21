@@ -63,7 +63,7 @@ const Home = () => {
               <Link to="/docs/install" className="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold py-4 px-12 rounded-xl transition-all shadow-[0_0_30px_rgba(34,211,238,0.4)] text-lg">
                 Get Started
               </Link>
-              <a href="https://github.com" className="bg-slate-900 hover:bg-slate-800 text-white font-medium py-4 px-12 rounded-xl border border-slate-700 transition-all text-lg">
+              <a href="https://github.com/voidVisual/Kubecent-Kubernetes-cost-optimization" target="_blank" rel="noreferrer" className="bg-slate-900 hover:bg-slate-800 text-white font-medium py-4 px-12 rounded-xl border border-slate-700 transition-all text-lg">
                 View on GitHub
               </a>
             </div>

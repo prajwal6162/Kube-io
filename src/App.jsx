@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { Github, Menu, X, Mail, Users } from 'lucide-react';
+import { Github, Menu, X, Mail } from 'lucide-react';
 
 // Import Pages
 import Home from './pages/Home';
@@ -38,7 +38,7 @@ const Navbar = () => {
             {/* Updated Link to the new install page */}
             <Link to="/docs/install" className="text-slate-300 hover:text-cyan-400 transition-colors text-sm font-medium">Docs</Link>
             <Link to="/#contact" className="text-slate-300 hover:text-cyan-400 transition-colors text-sm font-medium">Contact Us</Link>
-            <a href="https://github.com/voidVisual/Kubecent-Kubernetes-cost-optimization" target="_blank" className="bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 hover:bg-cyan-500/20 px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2">
+            <a href="https://github.com/voidVisual/Kubecent-Kubernetes-cost-optimization" target="_blank" rel="noreferrer" className="bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 hover:bg-cyan-500/20 px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-2">
                 <Github size={16} /> GitHub
             </a>
           </div>
@@ -77,7 +77,7 @@ const Footer = () => (
              <Link to="/docs/install" className="bg-white text-slate-950 font-bold py-3 px-8 rounded-lg hover:bg-cyan-50 transition-colors">
                Get Started
              </Link>
-             <a href="https://github.com/voidVisual/Kubecent-Kubernetes-cost-optimization" className="bg-slate-800 text-white font-medium py-3 px-8 rounded-lg border border-slate-700 hover:bg-slate-700 transition-all">
+             <a href="https://github.com/voidVisual/Kubecent-Kubernetes-cost-optimization" target="_blank" rel="noreferrer" className="bg-slate-800 text-white font-medium py-3 px-8 rounded-lg border border-slate-700 hover:bg-slate-700 transition-all">
                View on GitHub
              </a>
           </div>
@@ -98,21 +98,28 @@ const Footer = () => (
              <a href="mailto:hello@kubecents.io" className="flex items-center gap-2 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white px-4 py-2 rounded-lg transition-colors text-sm">
                <Mail size={16} /> hello@kubecents.io
              </a>
-             <a href="#" className="flex items-center gap-2 text-slate-400 hover:text-cyan-400 transition-colors text-sm px-2 py-2">
-               <Users size={16} /> Join our community
-             </a>
            </div>
         </div>
       </div>
 
       <div className="text-center text-slate-600 text-sm">
-        <p>© {new Date().getFullYear()} Kubecents. Open Source (MIT License).</p>
+        <p>© {new Date().getFullYear()} Kubecents. Open Source (MIT License). Open for collaboration as it is open source.</p>
       </div>
     </div>
   </footer>
 );
 
-// Layout for ocumentation Pages (Sidebar logic)
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [pathname]);
+
+  return null;
+};
+
+// Layout for documentation Pages (Sidebar logic)
 const DocsLayout = ({ children }) => {
   const loc = useLocation();
   const menu = [
@@ -144,6 +151,7 @@ const DocsLayout = ({ children }) => {
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="bg-slate-950 min-h-screen text-white selection:bg-cyan-500/30">
         <Routes>
           {/* Home Route (Has its own layout with Navbar/Footer) */}
